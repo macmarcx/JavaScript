@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="prototype.js"></script>
+  <script type="text/javascript">
+    function test1() {
+      var d = $('myDiv');
+      alert(d.innerHTML);
+    }
+
+    function test2() {
+      var divs = $('myDiv','myOtherDiv');
+
+      for (i = 0; i < divs.length; i++) {
+        alert(divs[i].innerHTML);
+      }  
+    }
+    function test3() {
+        alert($F('username'));
+    }
+  </script>
+</head>
+<body>
+
+  <div id="myDiv">
+    <p>This text is a paragraph.</p>
+  </div>
+
+  <div id="myOtherDiv">
+    <p>My other paragraph.</p>
+  </div>
+
+  <input type="button" name="" value="Call test1()" onclick="test1();"><br>
+  <input type="button" name="" value="Call test2()" onclick="test2();"><br>
+
+  <hr>
+
+  <input type="text" id="username" name="" value="Marcos Silva">
+  <input type="button" name="" value="Test3" onclick="test3();"><br>
+</body>
+</html>

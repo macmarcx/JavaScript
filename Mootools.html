@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css" media="screen">
+    #accordion
+    {
+      margin: 20px 0 0;
+      max-width: 600px;
+    }
+
+    #accordion h2
+    {
+      background: #145145;
+      color: white;
+      cursor: pointer;
+      font: 12px Helvetica, Arial, sans-serif;
+      line-height: 16px;
+      margin: 0 0 4px 0;
+      padding: 3px 5px 1px;
+    }
+
+    #accordion .content
+    {
+      background-color: #DDDDDD;
+    }
+
+    #accordion .content p
+    {
+      margin: 0.5em 0;
+      padding: 0 6px 8px 6px;
+    }
+
+  </style>
+
+  <script type="text/javascript" src="MooTools-Core-1.6.0.js"></script>
+  <script type="text/javascript" src="MooTools-More-1.6.0.js"></script>
+
+  <script type="text/javascript">
+    window.addEvent('domready', function () {
+      new Fx.Accordion($('accordion'), '#accordion h2','#accordion .content');
+    });
+  </script>
+</head>
+<body>
+<div id="accordion">
+  <h2>Who is Marcos Silva?</h2>
+  <div class="content">
+    <p>Marcos Silva is a Developer</p>
+    <p>huhuahahaauhuahahuauhauauhauhuhahauhuahhauhahuahahuahhauhauhuahuahahuhauhauhauahuahuahah</p>
+  </div>
+
+  <h2>What is ....?</h2>
+  <div class="content">
+    <p>Teste</p>
+    <p>huhuahahaauhuahahuauhauauhauhuhahauhuahhauhahuahahuahhauhauhuahuahahuhauhauhauahuahuahah</p>
+  </div>
+
+  <h2>What is Marcos?</h2>
+  <div class="content">
+    <p>hahahhaahhahahhahahhahahahahahahahahahahahahahahah</p>
+    <p>huhuahahaauhuahahuauhauauhauhuhahauhuahhauhahuahahuahhauhauhuahuahahuhauhauhauahuahuahah</p>
+  </div>
+</div>
+</body>
+</html>

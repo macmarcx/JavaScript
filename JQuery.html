@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $("#buttonFadeIn").click(function (){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+      });
+
+      $("#buttonFadeOut").click(function (){
+        $("#div1").fadeOut();
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut(5000);
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="buttonFadeIn" type="button" name="buttonFadeIn">Click to fade in</button>
+
+  <br><br>
+  <button id="buttonFadeOut" type="button" name="buttonFadeOut">Click to fade out</button>
+
+  <br><br>
+  <div id="div1" style="width: 80px; height: 80px; display:none; background-color: red;"></div>
+  <div id="div2" style="width: 80px; height: 80px; display:none; background-color: green;"></div>
+  <div id="div3" style="width: 80px; height: 80px; display:none; background-color: blue;"></div>
+</body>
+</html>

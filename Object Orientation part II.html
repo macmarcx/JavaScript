@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    /*function Car(speed) {
+      alert("Class car Instantiaded");
+      this.speed = speed;
+    }
+
+    Car.prototype.msg_speed = 'This is a message of Speed';
+
+    Car.prototype.setSpeed = function(speed){
+      this.speed = speed;
+      alert("Car speed changed");
+    }
+    var car1 = new Car(40);
+    var car2 = new Car(60);
+
+    alert ("Car1 speed: " + car1.speed);
+    alert ("Car2 speed: " + car2.speed);
+
+    alert(car1.msg_speed);
+
+    car1.setSpeed(120);
+    car2.setSpeed(140);
+
+    alert("Car 1 speed:" + car1.speed);
+    alert("Car 2 speed" + car2.speed);*/
+
+    function Car() {}
+        Car.prototype.msg_speed = 'This is message of speed';
+        Car.prototype.setSpeed = function (speed) {
+          this.speed = speed;
+          alert("Car speed changed");
+        }
+        function Ferrari() {}
+          Ferrari.prototype = new Car();
+
+          Ferrari.prototype.constructor = Ferrari;
+
+          Ferrari.prototype.setSpeed = function (speed) {
+            this.speed = speed;
+            alert("Ferrari speed changed");
+          }
+
+          var ferrarioop = new Ferrari();
+          ferrarioop.setSpeed(20);
+
+  </script>
+</body>
+</html>

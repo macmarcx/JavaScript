@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script type="text/javascript">
+    function myAlertBox() {
+      alert("This is a alert box!");
+    }
+
+    function myConfirmBox() {
+      var result;
+      var press = confirm ("Are you a developer?");
+
+      if(press == true)
+      {
+      result = "You pressed OK!";
+      }
+      else {
+      result = "You pressed Cancel!";
+      }
+      document.getElementById("show").innerHTML = result;
+    }
+
+    function myPromptBox() {
+      var result;
+      var car = prompt("Please enter your favorite car?","Ferrari");
+
+      if (car != null) {
+        result = "Your favorite car is " + car;
+        document.getElementById("show2").innerHTML = result;
+      }
+    }
+  </script>
+</head>
+<body>
+<button onclick="myAlertBox()">Alert Box</button>
+
+<br>
+<br>
+
+<button onclick="myConfirmBox()">Confirm Box</button>
+<p id="show"></p>
+
+<br>
+
+<button onclick="myPromptBox()">Prompt Box</button>
+<p id="show2"></p>
+</body>
+</html>

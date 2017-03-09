@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+    function myTest1() {
+      setInterval(function() {alert ("Marcos Silva")}, 2000);
+    }
+
+    function myTest2() {
+      setTimeout(function () {alert("Marcos Silva 2")}, 5000);
+    }
+  </script>
+</head>
+<body>
+<button onclick="myTest1()">Alert Box each 2 seconds</button>
+
+<br>
+<br>
+
+<button onclick="myTest2()">Alert Box once after 5 seconds</button>
+
+<br>
+<br>
+<p id="clock"></p>
+
+<script type="text/javascript">
+  var myVar = setInterval(function functionName() {myTimer()}, 1000);
+
+  function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("clock").innerHTML = t;
+  }
+</script>
+</body>
+</html>
