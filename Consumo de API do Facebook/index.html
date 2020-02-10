@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Páginas Facebook</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '236679114002844',
+          xfbml      : true,
+          version    : 'v6.0'
+        });
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+       function statusChangeCallback(response){
+            if(response.status === 'connected'){
+                console.log("Usuário Autorizado.");
+                requestAPI();
+            }else{
+                console.log("Não Autorizado");
+            }
+       }
+        function checkLoginState() {               // Called when a person is finished with the Login Button.
+        FB.getLoginStatus(function(response) {   // See the onlogin handler
+        statusChangeCallback(response);
+        });
+    }
+
+    function requestAPI(){
+        FB.api('me?fields=id,name,likes.limit(100){picture,fan_count,link,name}', function(response){
+            if(response){
+                console.log(response);
+                percorrePagina(response);
+            }
+        })
+    }
+
+    function percorrePagina(paginas){
+        pagina = document.getElementById('paginas');
+        
+        pagina.innerHTML = ''
+        for(var i = 0; i < paginas.likes.data.length; i++){
+                pagina.innerHTML += `
+                <div class="well">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img src="${paginas.likes.data[i].picture.data.url}" class="mr-3" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="media-heading">${paginas.likes.data[i].name}</h5>
+                            <p><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>Curtidas <span class="badge">${paginas.likes.data[i].fan_count}</span></p>
+                            <p><a href="${paginas.likes.data[i].link}" target="_blank">Visitar a página</a></p>
+                        </div>
+                    </div>
+                </div>`
+        }
+    }
+    </script>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+<div class="container">
+    <div id="paginas"></div>
+</div>
+
+</body>
+</html>
